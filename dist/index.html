@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5ec">
+  <meta name="description" content="Lidt tid til overs? Find en sjov, brugbar mini-mission, der passer til din tid, energi og dit budget.">
+  <title>Hvad nu? · Din pause har potentiale</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Gå til indhold</a>
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 6.8L22 12l-7.4 3.2L12 22l-2.6-6.8L2 12l7.4-3.2Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 4.6a5.4 5.4 0 0 0-7.6 0L12 5.4l-.8-.8a5.4 5.4 0 0 0-7.6 7.6L12 21l8.4-8.8a5.4 5.4 0 0 0 0-7.6Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4m0 2 4 4-4 4M3 7h3c5 0 7 10 12 10h3M3 17h3c2 0 4-2 6-5m2-3c1-1 2-2 4-2h3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-ro" viewBox="0 0 24 24"><path d="M5 17a5 5 0 1 1 1-10 7 7 0 0 1 13 2 4 4 0 0 1 0 8Z"/></symbol>
+    <symbol id="i-kreativ" viewBox="0 0 24 24"><path d="m4 20 1-5L17 3l4 4L9 19Zm10-14 4 4M4 20l5-1"/></symbol>
+    <symbol id="i-bevaegelse" viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 9-13h-7Z"/></symbol>
+    <symbol id="i-sammen" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8H4l1-4a8 8 0 1 1 15-4Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></symbol>
+    <symbol id="i-praktisk" viewBox="0 0 24 24"><path d="m4 20 12-12m-2-4 1-2m5 6 2-1M8 7 6 5m12 11 2 2m-9-9 4 4"/></symbol>
+  </defs></svg>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Hvad nu? Forside"><span class="brand-mark" aria-hidden="true">✳</span> hvad nu<span class="brand-question">?</span></a>
+    <nav aria-label="Hovedmenu">
+      <button class="nav-button active" id="explore-nav" aria-current="page">Find en mission</button>
+      <button class="nav-button" id="favorites-nav"><svg class="icon"><use href="#i-heart"/></svg> Mine favoritter <span id="favorite-count" class="count">0</span></button>
+    </nav>
+    <span class="header-note"><span class="live-dot"></span> Små ting tæller også</span>
+  </header>
+  <main id="main" class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span></span> DIN PAUSE HAR POTENTIALE</p><h1 id="page-title">Lidt tid. <span>Mange muligheder.</span></h1><p class="intro-copy">En lille mission kan gøre en stor forskel for din dag.<br class="desktop-break"> Find én, der passer til dig lige nu.</p></div>
+      <div class="intro-doodle" aria-hidden="true"><svg viewBox="0 0 170 170"><path d="m84 6 16 33 36-9-8 37 35 19-35 17 8 38-36-9-16 32-18-32-36 9 8-38L4 86l34-19-8-37 36 9Z" fill="#d7f45b" stroke="#243c34" stroke-width="2.5"/><path d="M65 75v9m35-9v9" stroke="#243c34" stroke-width="5" stroke-linecap="round"/><path d="M66 104q17 18 34-1" fill="none" stroke="#243c34" stroke-width="3.5" stroke-linecap="round"/></svg><span>mere af det gode ↗</span></div>
+    </section>
+    <div id="explore-view">
+      <div class="workspace">
+        <aside class="filter-panel" aria-labelledby="filter-heading">
+          <div class="panel-heading"><h2 id="filter-heading">Hvad har du at give?</h2><span aria-hidden="true">↙</span></div>
+          <p class="small muted">Vi finder noget, der passer.</p>
+          <form id="filters">
+            <fieldset><legend>Din tid <svg class="icon"><use href="#i-clock"/></svg></legend><div class="segments four">
+              <label><input type="radio" name="minutes" value="15"><span>15 min</span></label>
+              <label><input type="radio" name="minutes" value="30" checked><span>30 min</span></label>
+              <label><input type="radio" name="minutes" value="60"><span>1 time</span></label>
+              <label><input type="radio" name="minutes" value="120"><span>2 timer</span></label>
+            </div></fieldset>
+            <fieldset><legend>Din energi</legend><div class="energy-options">
+              <label><input type="radio" name="energy" value="1"><span><b>☁</b> På spareblus</span></label>
+              <label><input type="radio" name="energy" value="2" checked><span><b>☀</b> Helt okay</span></label>
+              <label><input type="radio" name="energy" value="3"><span><b>ϟ</b> Klar på det hele</span></label>
+            </div></fieldset>
+            <fieldset><legend>Dit budget</legend><div class="segments">
+              <label><input type="radio" name="budget" value="0" checked><span>Gratis</span></label>
+              <label><input type="radio" name="budget" value="50"><span>≤ 50 kr.</span></label>
+              <label><input type="radio" name="budget" value="100"><span>≤ 100 kr.</span></label>
+            </div></fieldset>
+            <div class="select-row"><label for="location">Hvor?<select id="location" name="location"><option value="any">Hvor som helst</option><option value="inside">Indenfor</option><option value="outside">Udenfor</option></select></label><label for="company">Med hvem?<select id="company" name="company"><option value="any">Det er lige meget</option><option value="alone">Bare mig</option><option value="together">Med andre</option></select></label></div>
+            <button type="submit" class="button primary generate"><svg class="icon"><use href="#i-shuffle"/></svg> Find min næste mission</button>
+          </form>
+          <div class="filter-footer"><span class="tiny-star">✳</span><span>Ingen store planer.<br>Bare et godt sted at starte.</span></div>
+        </aside>
+        <section class="mission-area" aria-label="Dine missioner">
+          <div class="category-bar" id="categories" role="group" aria-label="Vælg en kategori"></div>
+          <div class="result-meta"><span id="match-count">Finder muligheder …</span><span>HELT OP TIL DIG</span></div>
+          <article id="mission" class="mission-card" aria-label="Din foreslåede mission"></article>
+          <section class="more-section" aria-labelledby="more-heading"><div class="section-heading"><h2 id="more-heading">Eller måske …</h2><span class="small muted">Der er flere veje til en god pause</span></div><div id="alternatives" class="alternatives"></div></section>
+        </section>
+      </div>
+      <section class="bottom-grid">
+        <article class="daily-card"><div class="daily-icon" aria-hidden="true">↗</div><div><p class="eyebrow">DAGENS LILLE SKUB</p><h2 id="daily-title">En ny idé hver dag</h2><p id="daily-description"></p><button id="daily-button" class="text-button">Vis dagens mission <svg class="icon"><use href="#i-arrow"/></svg></button></div><span class="daily-date" id="daily-date"></span></article>
+        <article class="progress-card"><span class="progress-star" aria-hidden="true">✳</span><p class="eyebrow">DIT LILLE FREMSKRIDT</p><p class="progress-value"><strong id="completed-count">0</strong> <span>missioner<br>fuldført</span></p><p class="small muted">Små skridt er stadig skridt. Godt gået.</p></article>
+      </section>
+    </div>
+    <section id="favorites-view" hidden aria-labelledby="favorites-heading"><div class="favorites-heading"><div><p class="eyebrow">GEMT TIL EN GOD DAG</p><h2 id="favorites-heading">Dine favoritter</h2><p class="muted">De idéer, du gerne vil vende tilbage til.</p></div><button class="button secondary" id="back-explore">Find flere missioner <svg class="icon"><use href="#i-arrow"/></svg></button></div><div id="favorites-list" class="favorites-grid"></div></section>
+    <footer><span class="footer-brand">hvad nu?</span><span>Lavet til små pauser og gode omveje.</span><span>Favoritter og fremskridt gemmes i din browser.</span></footer>
+  </main>
+  <section class="timer-bar" id="timer-bar" hidden aria-label="Missionstimer"><div class="timer-orbit"><svg class="icon"><use href="#i-clock"/></svg></div><div class="timer-detail"><span id="timer-label">Din mission er i gang</span><strong id="timer-title"></strong></div><output id="timer-time" aria-label="Tid tilbage">00:00</output><button class="button timer-control" id="timer-pause">Pause</button><button class="timer-close" id="timer-close" aria-label="Stop timer">×</button></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Slå JavaScript til for at finde missioner og gemme favoritter.</p></noscript>
+</body>
+</html>

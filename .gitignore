@@ -1,0 +1,19 @@
+# Lokale afhængigheder og runtimefiler
+node_modules/
+*.log
+*.pid
+.env
+.env.*
+!.env.example
+.openai/*
+!.openai/hosting.json
+.sites-runtime/
+.sites-checkout*/
+*.tar.gz
+
+# Operativsystemer og editorer
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo

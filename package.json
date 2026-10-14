@@ -1,0 +1,15 @@
+{
+  "name": "hvad-nu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Små missioner til at komme i gang med noget rart og nyttigt.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test",
+    "check": "node scripts/check.mjs"
+  }
+}
